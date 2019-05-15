@@ -13,7 +13,7 @@ const KeyCodes = {
 
 const delimiters = [KeyCodes.comma, KeyCodes.enter]
 
-const API_URL = 'http://localhost:3001/search/houston/'
+const API_URL = 'https://get-stuff-test.herokuapp.com/search/houston/'
 
 class App extends Component {
   constructor(props) {
@@ -40,9 +40,7 @@ class App extends Component {
   componentDidMount() {
     let tags = JSON.parse(localStorage.getItem('tags'))
 
-    if (tags.length > 0) {
-      setTimeout(this.lazyLoad, 3000)
-    }
+    setTimeout(this.lazyLoad, 3000)
 
     this.setState({ tags },
       this.fetchAndStore
