@@ -19,7 +19,7 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      tags: [{ id: "Thailand", text: "Thailand" }],
+      tags: [],
       tagResults: [],
       mixedResults: [],
       items: [],
@@ -38,8 +38,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.saveToLocal()
-    let tags = setTimeout(JSON.parse(localStorage.getItem('tags')), 2000)
+    let tags = JSON.parse(localStorage.getItem('tags'))
 
     setTimeout(this.lazyLoad, 3000)
 
