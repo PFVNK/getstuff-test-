@@ -1,0 +1,211 @@
+@font-face {
+  font-family: 'definately_mayberegular';
+  src: url("definitely_maybe-webfont.woff2") format("woff2"), url("definitely_maybe-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+.nav-header {
+  position: fixed;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  height: 15vh;
+  width: 100vw;
+  background-color: white;
+  border-bottom: solid black; }
+  .nav-header button {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: inherit;
+    font-size: 1.5em; }
+  .nav-header .nav-logo {
+    font-family: 'definately_mayberegular';
+    position: fixed;
+    border: solid black;
+    background-color: white;
+    width: 14em;
+    height: 14em;
+    border-radius: 100%;
+    display: grid;
+    place-content: center;
+    z-index: 5;
+    border-top: 0px; }
+    .nav-header .nav-logo .nav-logo-title {
+      font-size: 4.5em; }
+  .nav-header .ReactTags__selected {
+    width: 30%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-right: 2em;
+    margin-bottom: .5em; }
+  .nav-header .ReactTags__tag {
+    margin-right: 5px;
+    font-family: 'Special Elite', cursive; }
+  .nav-header .ReactTags__remove {
+    margin-left: 1px; }
+  .nav-header .ReactTags__tagInput {
+    width: 50%;
+    float: right; }
+  .nav-header .ReactTags__tagInputField {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-bottom: .5em;
+    margin-right: 2.5em; 
+    z-index: 10000;
+  }
+
+/* Position and sizing of burger button */
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  left: 36px;
+  top: 25px; }
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: black; }
+
+/* Color/shape of burger icon bars on hover*/
+.bm-burger-bars-hover {
+  background: #a90000; }
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px; }
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #bdc3c7; }
+
+/*
+Sidebar wrapper styles
+Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+*/
+.bm-menu-wrap {
+  position: fixed;
+  left: -20px;
+  height: 100%; }
+
+/* General sidebar styles */
+.bm-menu {
+  touch-action: none;
+  background: white !important;
+  padding: 2.5em 1.5em 0;
+  box-shadow: 0px 0px 0px 1px black inset;
+  font-size: 1.15em;
+  overflow: hidden !important; }
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #373a47; }
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: black;
+  padding: 0.8em;
+  width: 100% !important; }
+
+/* Individual item */
+.bm-item {
+  display: inline-block; }
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3); }
+
+.gallery-main {
+  position: relative;
+  min-height: 100vh;
+  width: 100vw;
+  padding-top: 130px;
+  background-color: #001000;
+  background-image: url(brickback.jpg);
+  background-attachment: fixed; }
+
+.gallery-grid {
+  position: absolute;
+  margin-top: 8em; }
+
+.gallery-item-wrap {
+  padding: 2rem;
+  position: relative;
+  background: linear-gradient(to right, #a8ff78, #78ffd6);
+  padding: 6px; }
+
+.gallery-item {
+  display: grid;
+  background: #080808;
+  color: white;
+  font-family: 'Special Elite', cursive;
+  padding: 1rem;
+  overflow: hidden; }
+  .gallery-item .gallery-img {
+    width: 100%;
+    min-height: 280px; }
+  .gallery-item a {
+    color: white;
+    text-decoration-line: none; }
+
+.gallery-spinner {
+  position: fixed;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
+@media (max-width: 700px) {
+  .nav-header {
+    position: fixed;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    height: 10vh;
+    width: 100vw;
+    background-color: white;
+    border-bottom: solid black; }
+    .nav-header button {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      background-color: inherit;
+      border: none;
+      font-size: 1.5em; }
+    .nav-header .nav-logo {
+      font-family: 'definately_mayberegular';
+      position: fixed;
+      border: solid black;
+      background-color: white;
+      width: 10em;
+      height: 10em;
+      border-radius: 100%;
+      display: grid;
+      place-content: center;
+      z-index: 5;
+      border-top: 0px; }
+      .nav-header .nav-logo .nav-logo-title {
+        font-size: 2.5em; }
+    .nav-header .ReactTags__selected {
+      position: relative;
+      margin-top: 50px;
+      width: 10em;
+      height: 20em;
+      display: flex;
+      flex-direction: column; }
+    .nav-header .ReactTags__tag {
+      height: 40px;
+      font-family: 'Special Elite', cursive; }
+    .nav-header .ReactTags__remove {
+      margin-left: 1px; }
+    .nav-header .ReactTags__tagInputField {
+      font-family: 'Special Elite', cursive;
+      position: absolute;
+      top: 45px;
+      left: 30px;
+      width: 20em; }
+  .gallery-grid {
+    position: absolute;
+margin-top: 5em; } }
