@@ -13,7 +13,7 @@ const KeyCodes = {
 
 const delimiters = [KeyCodes.comma, KeyCodes.enter]
 
-const API_URL = 'https://get-stuff-test.herokuapp.com/search/houston/'
+const API_URL = 'https://www.get-stuff.net/search/houston/'
 
 class App extends Component {
   constructor(props) {
