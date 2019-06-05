@@ -56,7 +56,6 @@ app.get('/search/:location/:search_term', (req, res) => {
 
   const url = `https://${location}.craigslist.org/search/sso?sort=date&query=${search_term}&hasPic=1`
 
-
   fetch(url)
     .then(res => res.text())
     .then(body => {
