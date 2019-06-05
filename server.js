@@ -60,8 +60,7 @@ app.get('/search/:location/:search_term', (req, res) => {
     .then(res => res.text())
     .then(body => {
       const results = getResults(body)
-      allResults.push.apply(allResults, results)
-      res.json({ allResults })
+      res.json({ results })
     })
 })
 
