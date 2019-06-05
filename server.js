@@ -15,8 +15,8 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 function getResults(body) {
   const $ = cheerio.load(body)
   const rows = $('li.result-row')
-  const offerRows = $('a._109rpto._1anrh0x')
   const results = []
+
 
   rows.each((index, element) => {
     const result = $(element)
@@ -46,26 +46,6 @@ function getResults(body) {
     })
   })
 
-  offerRows.each((index, element) => {
-    const offerResult = $(element)
-    const title = offerResult.find('._nn5xny4._y9ev9r').text()
-    const images = offerResult.find('img._ipfql6._sheya5').attr('data-src')
-    const price = offerResult.find('._s3g03e4').text()
-    const hood = offerResult.find('._19rx43s2').text()
-
-    let url = `https://offerup.com/${offerResult.attr('href')}`
-
-    const id = index
-
-    results.push({
-      id,
-      title,
-      images,
-      price,
-      hood,
-      url
-    })
-  })
   return results
 }
 
@@ -74,18 +54,11 @@ app.get('/search/:location/:search_term', (req, res) => {
 
   allResults = []
 
-  const offerUrl = `https://offerup.com/search/?q=${search_term}&sort=-posted`
   const url = `https://${location}.craigslist.org/search/sso?sort=date&query=${search_term}&hasPic=1`
 
-  fetch(offerUrl)
+
+  fetch(url)
     .then(res => res.text())
-    .then(body => {
-      const results = getResults(body)
-      allResults.push.apply(allResults, results)
-      return fetch(url)
-    })
-    .then(res => res.text())
-    .catch(err => console.log(err))
     .then(body => {
       const results = getResults(body)
       allResults.push.apply(allResults, results)
