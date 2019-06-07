@@ -40,9 +40,6 @@ class App extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    console.log(this.state.tagResults)
-    console.log(this.state.mixedResults)
-    console.log(this.state.items)
     let prevMixedResults = prevState.mixedResults.length
     let mixedResults = this.state.mixedResults.length
 
@@ -122,7 +119,7 @@ class App extends Component {
       fetch(url)
         .then(response => response.json())
     ))
-      .then(json => this.setState({ tagResults: json[0].allResults || [] }))
+      .then(json => this.setState({ tagResults: json[0].results || [] }))
       .then(this.mixResults)
     console.log(urls)
   }

@@ -60,7 +60,6 @@ app.get('/search/:location/:search_term', (req, res) => {
     .then(res => res.text())
     .then(body => {
       const results = getResults(body)
-      console.log(results)
       res.json({ results })
     })
 })
