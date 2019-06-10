@@ -111,17 +111,12 @@ class App extends Component {
       tagString.push(`|+${x.text}+`)
     )
 
-    const urls = [
-      `${API_URL}${tagString.join('').slice(2, -1)}`,
-    ]
+    const craigUrl = `${API_URL}${tagString.join('').slice(2, -1)}`
 
-    Promise.all(urls.map(url =>
-      fetch(url)
-        .then(response => response.json())
-    ))
-      .then(json => this.setState({ tagResults: json[0].results || [] }))
+    fetch(craigUrl)
+      .then(response => response.json())
+      .then(json => this.setState({ tagResults: json.allResults[0] || [] }))
       .then(this.mixResults)
-    console.log(urls)
   }
 
   handleDelete = (i) => {
