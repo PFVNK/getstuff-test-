@@ -60,13 +60,17 @@ app.get('/search/:location/:search_term', (req, res) => {
     .then(res => res.text())
     .then(body => {
       const results = getResults(body)
-      res.json({ results })
+      allResults.push(results)
+      res.json({ allResults })
+      console.log(allResults)
     })
 })
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname + '/client/build/index.html'));
-});
+if (process.env.NODE_ENV === 'production') {
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname + '/client/build/index.html'));
+  });
+}
 
 const port = process.env.PORT || 3001;
 
