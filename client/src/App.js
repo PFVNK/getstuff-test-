@@ -40,6 +40,8 @@ class App extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
+    console.log(this.state.tagResults)
+    console.log(this.state.items)
     let prevMixedResults = prevState.mixedResults.length
     let mixedResults = this.state.mixedResults.length
 
@@ -115,7 +117,7 @@ class App extends Component {
 
     fetch(craigUrl)
       .then(response => response.json())
-      .then(json => this.setState({ tagResults: json.allResults[0] || [] }))
+      .then(json => this.setState({ tagResults: json.allResults || [] }))
       .then(this.mixResults)
   }
 
