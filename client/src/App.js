@@ -117,7 +117,7 @@ class App extends Component {
 
     fetch(craigUrl)
       .then(response => response.json())
-      .then(json => this.setState({ tagResults: json.allResults || [] }))
+      .then(json => this.setState({ tagResults: json.allResults.flat(Infinity) || [] }))
       .then(this.mixResults)
   }
 
