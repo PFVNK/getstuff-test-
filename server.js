@@ -52,7 +52,7 @@ function getResults(body) {
 app.get('/search/:location/:search_term', (req, res) => {
   const { location, search_term } = req.params
 
-  allResults = []
+  allResults = ["hey now"]
 
   const url = `https://${location}.craigslist.org/search/sso?sort=date&query=${search_term}&hasPic=1`
 
