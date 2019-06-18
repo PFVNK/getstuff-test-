@@ -62,10 +62,10 @@ app.get('/search/:location/:search_term', (req, res) => {
     .then(res => res.text())
     .then(body => {
       const results = getResults(body)
-      allResults.push(results)
+      res.json({ results })
     })
-    .then(() => { res.json({ allResults }) })
-    .then(() => console.log(allResults))
+    .then(() => console.log(results))
+    .catch(err => console.log(err))
 })
 
 if (process.env.NODE_ENV === 'production') {
