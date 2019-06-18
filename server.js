@@ -63,9 +63,9 @@ app.get('/search/:location/:search_term', (req, res) => {
     .then(body => {
       const results = getResults(body)
       allResults.push(results)
-      res.json({ allResults })
-      console.log(allResults)
     })
+    .then(() => { res.json({ allResults }) })
+    .then(() => console.log(allResults))
 })
 
 if (process.env.NODE_ENV === 'production') {
