@@ -40,12 +40,11 @@ class App extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    console.log(this.state.tagResults)
-    console.log(this.state.items)
+    const { tags } = this.state
     let prevMixedResults = prevState.mixedResults.length
     let mixedResults = this.state.mixedResults.length
 
-    if (prevMixedResults !== mixedResults) {
+    if (prevMixedResults !== mixedResults && tags.length > 0) {
       let resultDiff = (prevMixedResults > mixedResults) ? prevMixedResults - mixedResults : mixedResults - prevMixedResults
 
       Push.create(`You have ${resultDiff} new items to view!`, {
