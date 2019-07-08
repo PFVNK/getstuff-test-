@@ -143,7 +143,8 @@ Note: Beware of modifying this element as it can break the animations - you shou
   color: white;
   font-family: 'Special Elite', cursive;
   padding: 1rem;
-  overflow: hidden; }
+  overflow: hidden; 
+}
   .gallery-item .gallery-img {
     width: 100%;
     min-height: 280px; }
@@ -202,10 +203,36 @@ Note: Beware of modifying this element as it can break the animations - you shou
       margin-left: 1px; }
     .nav-header .ReactTags__tagInputField {
       font-family: 'Special Elite', cursive;
+      border: solid .05px black;
       position: absolute;
       top: 45px;
       left: 30px;
-      width: 20em; }
+      width: 18em;
+      height: 2em;}
   .gallery-grid {
     position: absolute;
-margin-top: 5em; } }
+    margin-top: 5em; } }
+
+@media (max-width: 550px) {
+  .bm-burger-button {
+    position: fixed;
+    width: 36px;
+    height: 30px;
+    left: 20px;
+    top: 10px; }
+
+  .nav-header .nav-logo {
+    font-family: 'definately_mayberegular';
+    position: fixed;
+    border: solid black;
+    background-color: white;
+    width: 8em;
+    height: 8em;
+    border-radius: 100%;
+    display: grid;
+    place-content: center;
+    z-index: 5;
+    border-top: 0px; }
+  .nav-header .nav-logo .nav-logo-title {
+    font-size: 2.5em; }
+}
