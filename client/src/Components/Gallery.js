@@ -40,7 +40,7 @@ class Gallery extends Component {
             <div>
               <StackGrid
                 className='gallery-grid'
-                columnWidth={330}
+                columnWidth={300}
                 monitorImagesLoaded={true}
                 gutterHeight={9}
                 gutterWidth={7}>
