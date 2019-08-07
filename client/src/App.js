@@ -72,11 +72,11 @@ class App extends Component {
   }
 
   lazyLoad = () => {
-    const { mixedResults } = this.state
+    const { mixedResults, itemCount } = this.state
     if (mixedResults.length > 0) {
-      const items = mixedResults.slice(0, this.state.itemCount + 12)
+      const items = mixedResults.slice(0, itemCount + 12)
       this.setState({
-        itemCount: this.state.itemCount + 12,
+        itemCount: itemCount + 12,
         items
       })
     }
@@ -100,7 +100,8 @@ class App extends Component {
   }
 
   saveToLocal = () => {
-    localStorage.setItem('tags', JSON.stringify(this.state.tags))
+    const { tags } = this.state
+    localStorage.setItem('tags', JSON.stringify(tags))
   }
 
   fetchAndStore = () => {
@@ -137,9 +138,10 @@ class App extends Component {
   }
 
   handleAddition = (tag) => {
-    if (this.state.tags.length < 3) {
+    const { tags } = this.state
+    if (tags.length < 3) {
       this.setState({
-        tags: [...this.state.tags, tag],
+        tags: [...tags, tag],
         itemCount: 0
       },
         () => {
@@ -150,7 +152,7 @@ class App extends Component {
   }
 
   handleDrag = (tag, currPos, newPos) => {
-    const tags = [...this.state.tags]
+    const { tags } = this.state
     const newTags = tags.slice()
 
     newTags.splice(currPos, 1)

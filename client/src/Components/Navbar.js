@@ -9,6 +9,7 @@ import '../App.css'
 class Navbar extends Component {
 
   render() {
+    const { tags, handleDelete, handleAddition, handleDrag, delimiters } = this.props
     return (
       <React.Fragment>
         <header className='nav-header'>
@@ -17,22 +18,22 @@ class Navbar extends Component {
             <Menu>
               <AddTag
                 className='nav-tag'
-                tags={this.props.tags}
-                handleDelete={this.props.handleDelete}
-                handleAddition={this.props.handleAddition}
-                handleDrag={this.props.handleDrag}
-                delimiters={this.props.delimiters}
+                tags={tags}
+                handleDelete={handleDelete}
+                handleAddition={handleAddition}
+                handleDrag={handleDrag}
+                delimiters={delimiters}
               />
             </Menu>
           </MediaQuery>
           <MediaQuery query='(min-width: 900px)'>
             <AddTag
               className='nav-tag'
-              tags={this.props.tags}
-              handleDelete={this.props.handleDelete}
-              handleAddition={this.props.handleAddition}
-              handleDrag={this.props.handleDrag}
-              delimiters={this.props.delimiters}
+              tags={tags}
+              handleDelete={handleDelete}
+              handleAddition={handleAddition}
+              handleDrag={handleDrag}
+              delimiters={delimiters}
             />
           </MediaQuery>
         </header>
